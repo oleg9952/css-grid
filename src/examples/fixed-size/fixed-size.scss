@@ -1,0 +1,35 @@
+.cards {
+    max-width: 895px;
+    margin: 0 auto;
+
+    // ----- GRID
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    &__card {
+        height: 250px;
+        width: 200px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        background-color: #a3fff6;
+    }
+}
+
+// body has padding of 15px
+@media screen and (max-width: calc(895px + 30px)) {
+    .cards {
+        max-width: 660px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: calc(660px + 30px)) {
+    .cards {
+        max-width: 430px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: calc(430px + 30px)) {
+    .cards {
+        max-width: 200px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

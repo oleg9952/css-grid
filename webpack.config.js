@@ -1,6 +1,15 @@
 const path = require('path')
 const HTMLPlugin = require('html-webpack-plugin')
 
+const PAGES = [
+    { template: './index.html', filename: 'index.html' },
+    { template: './examples/navigation/navigation.html', filename: 'navigation.html' },
+    { template: './examples/gallery/gallery.html', filename: 'gallery.html' },
+    { template: './examples/fixed-size/fixed-size.html', filename: 'fixed-size.html' },
+    { template: './examples/column-row/column-row.html', filename: 'column-row.html' },
+    { template: './examples/areas/areas.html', filename: 'areas.html' }
+]
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -15,9 +24,11 @@ module.exports = {
         port: 4200
     },
     plugins: [
-        new HTMLPlugin({
-            template: './index.html',
-            filename: 'index.html'
+        ...PAGES.map(page => {
+            return new HTMLPlugin({
+                template: page.template,
+                filename: page.filename
+            })
         })
     ],
     module: {
@@ -29,7 +40,14 @@ module.exports = {
                     'css-loader',
                     'sass-loader'
                 ]
-            }
+            },
+            {
+				test: /\.(png|jpe?g|gif|svg)$/i,
+				loader: 'file-loader',
+				options: {
+				  name: '[name].[ext]'
+				},
+			}
         ]
     }
 }
