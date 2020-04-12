@@ -4,6 +4,8 @@
 @use './examples/fixed-size/fixed-size.scss';
 @use './examples/column-row/column-row.scss';
 @use './examples/areas/areas.scss';
+@use './examples/forms/forms.scss';
+@use './examples/grid/grid.scss';
 
 body {
     padding: 15px;
@@ -48,6 +50,16 @@ body {
     &__item:nth-child(4),
     &__item:nth-child(5) {
         background-image: url('./gif/areas.gif');
+    }
+    &__item:nth-child(6) {
+        background-image: url('./gif/forms.gif');
+    }
+    &__item:nth-child(7) {
+        background-image: url('./gif/grid.gif');
+    }
+    &__item:nth-child(8) {
+        background-image: url('./gif/gallery2.gif');
+        border: 5px solid #20c4ff;
     }
     &__item-title {
         position: absolute;

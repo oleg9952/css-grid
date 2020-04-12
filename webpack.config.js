@@ -7,7 +7,9 @@ const PAGES = [
     { template: './examples/gallery/gallery.html', filename: 'gallery.html' },
     { template: './examples/fixed-size/fixed-size.html', filename: 'fixed-size.html' },
     { template: './examples/column-row/column-row.html', filename: 'column-row.html' },
-    { template: './examples/areas/areas.html', filename: 'areas.html' }
+    { template: './examples/areas/areas.html', filename: 'areas.html' },
+    { template: './examples/forms/forms.html', filename: 'forms.html' },
+    { template: './examples/grid/grid.html', filename: 'grid.html' }
 ]
 
 module.exports = {
